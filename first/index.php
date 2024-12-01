@@ -8,27 +8,24 @@ $arrayRight = $input[1];
 sort($arrayLeft);
 sort($arrayRight);
 
-// Evaluate distances
 $totalDistance = 0;
+$totalSimilarity = 0;
+$occurences = array_count_values($arrayRight);
 
 for ($i = 0; $i < count($arrayLeft); $i++) {
+    // Evaluate distance
     $distance = $arrayRight[$i] - $arrayLeft[$i];
     if ($distance < 0) {
         $distance *= -1;
     }
     $totalDistance += $distance;
-}
 
-echo "The total distance is: " . $totalDistance;
-
-$totalSimilarity = 0;
-// Evaluate similarity score
-for ($i = 0; $i < count($arrayLeft); $i++) {
-    $occurences = array_count_values($arrayRight);
+    // Evaluate similarity
     $similarity = $occurences[$arrayLeft[$i]] ?? 0;
     $totalSimilarity += $similarity * $arrayLeft[$i];
 }
 
+echo "The total distance is: " . $totalDistance . "<br>";
 echo "The similarity score is: " . $totalSimilarity;
 
 function extractInput(string $inputFilePath): array
