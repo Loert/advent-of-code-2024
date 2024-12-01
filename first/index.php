@@ -7,6 +7,8 @@ $arrayRight = $input[1];
 
 sort($arrayLeft);
 sort($arrayRight);
+
+// Evaluate distances
 $totalDistance = 0;
 
 for ($i = 0; $i < count($arrayLeft); $i++) {
@@ -18,6 +20,16 @@ for ($i = 0; $i < count($arrayLeft); $i++) {
 }
 
 echo "The total distance is: " . $totalDistance;
+
+$totalSimilarity = 0;
+// Evaluate similarity score
+for ($i = 0; $i < count($arrayLeft); $i++) {
+    $occurences = array_count_values($arrayRight);
+    $similarity = $occurences[$arrayLeft[$i]] ?? 0;
+    $totalSimilarity += $similarity * $arrayLeft[$i];
+}
+
+echo "The similarity score is: " . $totalSimilarity;
 
 function extractInput(string $inputFilePath): array
 {
