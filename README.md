@@ -5,4 +5,5 @@ https://adventofcode.com/2024
 
 ## Done 
 
-December 1st ⭐⭐ 
+- December 1st ⭐⭐ 
+- December 2nd ⭐
