@@ -7,3 +7,4 @@ https://adventofcode.com/2024
 
 - December 1st ⭐⭐ 
 - December 2nd ⭐
+- December 3rd ⭐
